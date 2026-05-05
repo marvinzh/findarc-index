@@ -1,0 +1,86 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Finda logo</title>
+  <desc id="desc">A geometric F monogram built from connected nodes for the Finda agent collaboration network.</desc>
+  <defs>
+    <linearGradient id="boardFill" x1="28" y1="24" x2="130" y2="138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FBFE"/>
+      <stop offset="1" stop-color="#E5EEF9"/>
+    </linearGradient>
+    <linearGradient id="boardStroke" x1="34" y1="28" x2="124" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#B7C9E7"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80 80) rotate(90) scale(78)">
+      <stop offset="0.15" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#B7C8E9"/>
+    </radialGradient>
+    <linearGradient id="stroke" x1="58" y1="42" x2="93" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E2D48"/>
+      <stop offset="0.45" stop-color="#4B679D"/>
+      <stop offset="1" stop-color="#7B97CC"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="60" y1="43" x2="94" y2="81" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9E8FF"/>
+      <stop offset="1" stop-color="#91B2EE"/>
+    </linearGradient>
+    <filter id="boardShadow" x="8" y="10" width="144" height="146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="10"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.321569 0 0 0 0 0.396078 0 0 0 0 0.537255 0 0 0 0.18 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feOffset dy="1.5"/>
+      <feGaussianBlur stdDeviation="1.5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.960784 0 0 0 0 0.976471 0 0 0 0 1 0 0 0 0.9 0"/>
+      <feBlend mode="screen" in2="effect1_dropShadow_0_1" result="effect2_innerLight_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_innerLight_0_1" result="shape"/>
+    </filter>
+    <filter id="shadow" x="28" y="24" width="104" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="10"/>
+      <feGaussianBlur stdDeviation="8"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.32549 0 0 0 0 0.4 0 0 0 0 0.545098 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha_2"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.658824 0 0 0 0 0.756863 0 0 0 0 0.937255 0 0 0 0.32 0"/>
+      <feBlend mode="screen" in2="effect1_dropShadow_0_1" result="effect2_glow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_glow_0_1" result="shape"/>
+    </filter>
+    <filter id="nodeGlow" x="40" y="28" width="72" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.568627 0 0 0 0 0.698039 0 0 0 0 0.933333 0 0 0 0.55 0" result="glow"/>
+      <feBlend mode="screen" in="glow" in2="BackgroundImageFix" result="effect1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1" result="shape"/>
+    </filter>
+  </defs>
+  <g filter="url(#boardShadow)">
+    <rect x="24" y="24" width="112" height="112" rx="30" fill="url(#boardFill)"/>
+    <rect x="24.75" y="24.75" width="110.5" height="110.5" rx="29.25" stroke="url(#boardStroke)" stroke-width="1.5"/>
+    <path d="M38 34C50 28.8 62.5 26 75.5 26H111.5C120.9 26 128.8 32.5 131.1 41.5" stroke="#FFFFFF" stroke-opacity="0.62" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M60 43L60 78L60 114" stroke="url(#glow)" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
+    <path d="M60 43L94 45" stroke="url(#glow)" stroke-width="5.8" stroke-linecap="round" opacity="0.24"/>
+    <path d="M60 78L86 78" stroke="url(#glow)" stroke-width="5.8" stroke-linecap="round" opacity="0.24"/>
+    <path d="M60 43L60 78L60 114" stroke="url(#stroke)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M60 43L94 45" stroke="url(#stroke)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M60 78L86 78" stroke="url(#stroke)" stroke-width="3" stroke-linecap="round"/>
+    <g filter="url(#nodeGlow)">
+      <circle cx="60" cy="43" r="7.6" fill="url(#orb)"/>
+      <circle cx="94" cy="45" r="7.6" fill="url(#orb)"/>
+      <circle cx="60" cy="78" r="7.6" fill="url(#orb)"/>
+      <circle cx="86" cy="78" r="7.6" fill="url(#orb)"/>
+      <circle cx="60" cy="114" r="7.6" fill="url(#orb)"/>
+    </g>
+    <circle cx="60" cy="43" r="2.6" fill="#21324D"/>
+    <circle cx="94" cy="45" r="2.6" fill="#21324D"/>
+    <circle cx="60" cy="78" r="2.6" fill="#21324D"/>
+    <circle cx="86" cy="78" r="2.6" fill="#21324D"/>
+    <circle cx="60" cy="114" r="2.6" fill="#21324D"/>
+  </g>
+</svg>
