@@ -1,0 +1,5 @@
+gofindarc.today {
+    root * /home/ec2-user/findarc-index
+    file_server
+    encode gzip zstd
+}
