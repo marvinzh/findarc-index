@@ -40,7 +40,6 @@ body {
   background-position: 0% 0%, 100% 0%, 50% 0%;
   min-height: 100vh;
   overflow-x: hidden;
-  animation: body-gradient-shift 20s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 body::before {
@@ -55,6 +54,22 @@ body::before {
   background-size: auto, 32px 32px, 32px 32px;
   opacity: 0.32;
   animation: grid-drift 28s linear infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -18%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 52%, rgba(160, 184, 231, 0.22), transparent 24%),
+    radial-gradient(circle at 78% 16%, rgba(255, 255, 255, 0.76), transparent 18%),
+    linear-gradient(118deg, rgba(182, 205, 241, 0.12) 12%, rgba(255, 255, 255, 0) 34%, rgba(142, 170, 222, 0.22) 50%, rgba(255, 255, 255, 0) 66%, rgba(206, 220, 245, 0.14) 84%);
+  filter: blur(34px) saturate(1.08);
+  opacity: 0.72;
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: ribbon-sweep 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 .ambient-background {
@@ -83,9 +98,7 @@ body::before {
     radial-gradient(circle at 68% 78%, rgba(255, 255, 255, 0.9), transparent 32%);
   filter: blur(18px);
   opacity: 0.92;
-  animation:
-    ambient-sheen 30s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate,
-    ambient-color-wash 22s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+  animation: ambient-sheen 30s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 .ambient-background::after {
@@ -93,10 +106,7 @@ body::before {
   background:
     conic-gradient(from 220deg at 50% 50%, rgba(var(--theme-rgb), 0.08), rgba(255, 255, 255, 0), rgba(var(--theme-rgb), 0.06), rgba(255, 255, 255, 0));
   filter: blur(42px);
-  opacity: 0.7;
-  animation:
-    ambient-rotate 52s linear infinite,
-    ambient-spectrum 24s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+  opacity: 0.5;
 }
 
 .ambient-orb {
@@ -114,9 +124,7 @@ body::before {
   width: 36rem;
   height: 36rem;
   background: radial-gradient(circle at 36% 36%, rgba(var(--theme-rgb), 0.34), rgba(var(--theme-rgb), 0.12) 42%, transparent 74%);
-  animation:
-    ambient-float-a 16s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate,
-    orb-tone-a 14s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+  animation: ambient-float-a 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 .ambient-orb-b {
@@ -125,9 +133,7 @@ body::before {
   width: 42rem;
   height: 42rem;
   background: radial-gradient(circle at 45% 45%, rgba(198, 214, 239, 0.34), rgba(198, 214, 239, 0.14) 40%, transparent 72%);
-  animation:
-    ambient-float-b 20s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate,
-    orb-tone-b 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+  animation: ambient-float-b 22s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 .ambient-orb-c {
@@ -136,9 +142,7 @@ body::before {
   width: 34rem;
   height: 34rem;
   background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9), rgba(214, 227, 247, 0.22) 42%, transparent 74%);
-  animation:
-    ambient-float-c 18s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate,
-    orb-tone-c 16s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+  animation: ambient-float-c 20s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
 }
 
 a {
@@ -262,7 +266,7 @@ summary {
 }
 
 .hero {
-  padding: 84px 0 64px;
+  padding: 58px 0 58px;
 }
 
 .hero-panel {
@@ -756,15 +760,20 @@ footer {
   }
 }
 
-@keyframes body-gradient-shift {
+@keyframes ribbon-sweep {
   0% {
-    background-position: 0% 0%, 100% 0%, 50% 0%;
-    background-size: 132% 132%, 138% 138%, 100% 100%;
+    transform: translate3d(-6%, -3%, 0) rotate(-8deg) scale(1.02);
+    opacity: 0.52;
+  }
+
+  50% {
+    transform: translate3d(2%, 1%, 0) rotate(-1deg) scale(1.08);
+    opacity: 0.82;
   }
 
   100% {
-    background-position: 12% 8%, 88% 12%, 50% 100%;
-    background-size: 144% 144%, 146% 146%, 100% 100%;
+    transform: translate3d(10%, 4%, 0) rotate(7deg) scale(1.04);
+    opacity: 0.6;
   }
 }
 
@@ -790,47 +799,6 @@ footer {
   }
 }
 
-@keyframes ambient-rotate {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-
-  100% {
-    transform: rotate(360deg) scale(1.08);
-  }
-}
-
-@keyframes ambient-color-wash {
-  0% {
-    filter: blur(18px) hue-rotate(0deg) saturate(1) brightness(1);
-  }
-
-  50% {
-    filter: blur(20px) hue-rotate(10deg) saturate(1.12) brightness(1.03);
-  }
-
-  100% {
-    filter: blur(18px) hue-rotate(-8deg) saturate(0.96) brightness(1.02);
-  }
-}
-
-@keyframes ambient-spectrum {
-  0% {
-    filter: blur(42px) hue-rotate(0deg) saturate(1);
-    opacity: 0.6;
-  }
-
-  50% {
-    filter: blur(46px) hue-rotate(12deg) saturate(1.16);
-    opacity: 0.78;
-  }
-
-  100% {
-    filter: blur(42px) hue-rotate(-10deg) saturate(1.04);
-    opacity: 0.68;
-  }
-}
-
 @keyframes ambient-float-a {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -838,18 +806,6 @@ footer {
 
   100% {
     transform: translate3d(14%, 9%, 0) scale(1.12);
-  }
-}
-
-@keyframes orb-tone-a {
-  0% {
-    filter: blur(18px) hue-rotate(0deg) saturate(1);
-    opacity: 0.78;
-  }
-
-  100% {
-    filter: blur(22px) hue-rotate(14deg) saturate(1.18);
-    opacity: 0.92;
   }
 }
 
@@ -865,16 +821,6 @@ footer {
   }
 }
 
-@keyframes orb-tone-b {
-  0% {
-    filter: blur(18px) hue-rotate(-4deg) saturate(0.96);
-  }
-
-  100% {
-    filter: blur(24px) hue-rotate(16deg) saturate(1.22);
-  }
-}
-
 @keyframes ambient-float-c {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
@@ -882,18 +828,6 @@ footer {
 
   100% {
     transform: translate3d(11%, -12%, 0) scale(1.1);
-  }
-}
-
-@keyframes orb-tone-c {
-  0% {
-    filter: blur(18px) hue-rotate(0deg) saturate(1);
-    opacity: 0.78;
-  }
-
-  100% {
-    filter: blur(24px) hue-rotate(-12deg) saturate(1.1);
-    opacity: 0.94;
   }
 }
 
@@ -996,6 +930,7 @@ footer {
   body,
   .copy-btn,
   body::before,
+  body::after,
   .ambient-background,
   .ambient-background::before,
   .ambient-background::after,
