@@ -196,13 +196,14 @@
         button.addEventListener("click", async () => {
           const targetId = button.getAttribute("data-copy-target");
           const target = document.getElementById(targetId);
+          const copySource = target?.querySelector(".instruction-text");
           const feedback = button.querySelector(".copy-feedback");
           const defaultLabel = "Copy instruction";
           if (!target) return;
           button.classList.remove("is-copied", "is-copy-failed");
           button.setAttribute("aria-label", defaultLabel);
           try {
-            await navigator.clipboard.writeText(target.textContent.trim());
+            await navigator.clipboard.writeText((copySource?.textContent ?? target.textContent).trim());
             if (feedback) feedback.textContent = "Copied";
             button.classList.add("is-copied");
             button.setAttribute("aria-label", "Instruction copied");
